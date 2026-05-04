@@ -1,0 +1,96 @@
+# Topic: Timer haladó (CTC, interruptok, frekvencia)
+
+## TOV bit (overflow)
+- Akkor áll be, amikor a TCNT eléri a maximumot és újrakezd
+- Pollinggal figyelhető
+
+---
+
+## Timer overflow interrupt
+- TIMSK regiszterben állítható
+- Automatikusan meghívódik TOV esetén
+- Nem kell manuálisan törölni a flag-et
+
+---
+
+## CTC mód (Clear Timer on Compare)
+- Timer 0-tól számol OCR értékig
+- OCR elérésekor:
+  - nulláz
+  - újrakezdi
+- Hardveresen generál jelet
+
+---
+
+## Output Compare (OCR)
+- TCNT folyamatosan összehasonlítódik OCR-rel
+- Ha egyeznek:
+  - flag beáll
+  - interrupt meghívódhat
+
+---
+
+## CTC működés
+- TCNT → számol
+- eléri OCR → reset
+- pin toggle történhet
+
+---
+
+## Frekvencia generálás
+- OCR érték változtatásával változik a frekvencia
+- kisebb OCR → magasabb frekvencia
+
+---
+
+## FOC bit
+- Szoftveresen triggerelhető compare esemény
+- Olyan mintha TCNT == OCR lenne
+
+---
+
+## Interrupt típusok
+- Timer interrupt
+- External interrupt
+
+---
+
+## OCR interrupt
+- Compare eseménynél hívódik
+- Használható frekvencia váltásra
+
+---
+
+## CTC vs normál mód
+- Normál: overflow (TOV)
+- CTC: compare (OCR)
+
+---
+
+## Pin kimenet
+- OC pin-en jelenik meg a jel
+- Arduino: pl. PD6
+
+---
+
+## Timer control
+- TCCR regiszterekkel állítjuk:
+  - mód
+  - kimenet viselkedés
+
+---
+
+## Két timer használata
+- egyik: frekvencia
+- másik: időtartam
+
+---
+
+## Frekvencia számítás
+- f = clock / (2 * steps)
+- steps = hány lépést számol
+
+---
+
+## Pontosság
+- kisebb lépcső → pontosabb frekvencia

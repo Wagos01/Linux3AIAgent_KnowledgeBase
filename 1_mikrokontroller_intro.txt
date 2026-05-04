@@ -1,0 +1,133 @@
+# Topic: Mikrokontrollerek alapok
+
+## Mi az a mikrokontroller?
+A mikrokontroller egy olyan számítógép, amelyet egy konkrét feladat elvégzésére építenek be egy rendszerbe.
+Nem általános célú, hanem egy adott feladatra optimalizált.
+
+## Fő jellemzők
+- kis méret
+- alacsony fogyasztás
+- olcsó
+- real-time működés
+
+## Hol használják?
+- autók
+- háztartási gépek (mosógép, termosztát)
+- ipari rendszerek
+- IoT eszközök (smart home, szenzorok)
+
+---
+
+## Embedded rendszer (beágyazott rendszer)
+Egy rendszer, amely:
+- tartalmaz CPU-t
+- memóriát (RAM, Flash)
+- input/output egységeket (GPIO)
+- szenzorokat és aktuátorokat
+
+Minden szükséges komponens egy chipben van.
+
+---
+
+## Memória típusok
+
+### Flash memória
+- program tárolására
+- nem felejt (kikapcsolás után is megmarad)
+
+### RAM (SRAM)
+- futás közbeni adatok
+- volatile (kikapcsoláskor törlődik)
+
+---
+
+## GPIO (General Purpose Input/Output)
+- bemenetként: feszültség mérés
+- kimenetként: feszültség kiírás
+
+---
+
+## Digitális jelek
+- 1 (HIGH): ~5V
+- 0 (LOW): ~0V
+
+---
+
+## Real-time működés
+A mikrokontroller:
+- garantált időn belül válaszol
+- kis késleltetés (predictable latency)
+
+Ez kritikus:
+- autók (légzsák)
+- ipari rendszerek
+
+---
+
+## Optimalizáció
+
+### Autó:
+- real-time működés
+
+### Autókulcs:
+- alacsony fogyasztás
+- sleep mód
+
+### Drón:
+- kis méret
+- kis súly
+- kevés memória használat
+
+---
+
+## IoT (Internet of Things)
+Internethez kapcsolt eszközök:
+- szenzorok
+- aktuátorok
+- smart home
+- smart city
+
+---
+
+## Mikrokontroller vs PC
+
+### PC:
+- általános célú
+- nagy teljesítmény
+- sok periféria
+
+### Mikrokontroller:
+- specifikus feladat
+- olcsó
+- alacsony fogyasztás
+- egyszerű
+
+---
+
+## Programozás
+- C nyelv
+- Arduino IDE
+- PlatformIO
+
+---
+
+## Arduino UNO
+- Atmel ATmega328P
+- 8 bites mikrokontroller
+- GPIO, timer, kommunikáció
+
+---
+
+## Kommunikáció
+- UART
+- I2C (TWI)
+- SPI
+
+---
+
+## Alap elv (bitbanging)
+A kommunikáció:
+- megfelelő feszültség (0 vagy 1)
+- megfelelő időben
+
+Ez minden digitális rendszer alapja.

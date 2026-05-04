@@ -1,0 +1,114 @@
+# Topic: GPIO (Input/Output)
+
+## GPIO
+- General Purpose Input/Output
+- digitális jelek kezelése
+
+---
+
+## Digitális értékek
+- HIGH = 5V
+- LOW = 0V
+
+---
+
+## Blink példa
+- LED villogtatása
+- HIGH → világít
+- LOW → nem világít
+
+---
+
+## Delay
+- ms-ben vár
+- Timer-t használ
+
+---
+
+## Portok
+- PORTB, PORTC, PORTD
+- 8 bit = 1 byte
+
+---
+
+## Regiszterek
+
+### DDR
+- irány
+- 1 = output
+- 0 = input
+
+### PORT
+- adat írás
+- pull-up aktiválás
+
+### PIN
+- adat olvasás
+
+---
+
+## Bit műveletek
+- OR (|) → bit beállítás
+- AND (&) → törlés
+- NOT (~) → negálás
+
+---
+
+## Példa
+- PORTB |= 0b00100000 → bit beállítás
+- PORTB &= ~0b00100000 → bit törlés
+
+---
+
+## Arduino vs low-level
+- Arduino: egyszerűbb
+- low-level: gyorsabb, pontosabb
+
+---
+
+## Input feszültség
+- 3.5–5V → HIGH
+- 0–1.5V → LOW
+- köztes → undefined
+
+---
+
+## Floating input
+- nincs bekötve → random érték
+
+---
+
+## Pull-up
+- alapból HIGH
+- LOW ha lehúzzuk
+
+---
+
+## INPUT módok
+- INPUT
+- INPUT_PULLUP
+
+---
+
+## Szenzorok
+- stabil jel → nem kell pull-up
+- gomb → kell pull-up
+
+---
+
+## Interrupt
+- eseményre reagál
+- nem kell polling
+
+---
+
+## ISR (Interrupt Service Routine)
+- megszakítja a programot
+- lefut
+- visszatér
+
+---
+
+## Előny
+- gyors reakció
+- kevesebb CPU használat

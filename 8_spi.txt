@@ -1,0 +1,204 @@
+# Topic: SPI (Serial Peripheral Interface)
+
+## Alapok
+- Soros kommunikáció
+- Master-Slave modell
+- 1 Master, több Slave
+- Nincs natív multi-master
+
+---
+
+## Vezetékek
+- SCK (clock)
+- MOSI (Master → Slave)
+- MISO (Slave → Master)
+- SS (Slave Select)
+
+---
+
+## Tri-state
+- 3 állapot:
+  - LOW
+  - HIGH
+  - HIGH-Z (leválasztott állapot)
+- Több eszköz használhat egy vonalat
+- HIGH-Z esetén nem zavar másokat
+
+---
+
+## Master szerep
+- Clock generálása
+- Slave kiválasztása (SS)
+
+---
+
+## Slave Select (SS)
+- LOW → aktív slave
+- HIGH → slave lekapcsol
+- Minden slave-nek külön SS kell
+
+---
+
+## Sebesség
+- Nincs felső limit
+- Tipikusan 1–100 MHz
+- Gyorsabb mint I2C
+
+---
+
+## Full Duplex
+- Egyszerre két irányba kommunikál
+- Minden clock ciklusban:
+  - Master küld
+  - Slave fogad
+  - Slave küld
+  - Master fogad
+
+---
+
+## Adatátvitel
+- Shift regiszter alapú
+- Általában 8 bit
+- Lehet 12, 16 vagy több bit is
+
+---
+
+## Bit sorrend
+- MSB first (gyakori)
+- LSB first is lehet
+
+---
+
+## Clock beállítás
+
+### CPOL (Clock Polarity)
+- Meghatározza az idle állapotot
+- 0 → LOW idle
+- 1 → HIGH idle
+
+### CPHA (Clock Phase)
+- Meghatározza mikor mintavételezünk
+- leading edge
+- trailing edge
+
+---
+
+## Mintavételezés
+- Adat stabil kell legyen olvasáskor
+- Beállítás és olvasás külön edge-en történik
+
+---
+
+## Hibaellenőrzés
+- Nincs beépített
+- Szoftveresen megoldható
+- Pl. visszaküldés és összehasonlítás
+
+---
+
+## Bekötési módok
+
+### Independent
+- Minden slave külön SS
+- Gyors és egyszerű
+
+---
+
+### Daisy Chain
+- Egy SS
+- Eszközök láncban
+- Adat körbejár
+
+---
+
+## Előnyök
+- Nagyon gyors
+- Full duplex
+- Egyszerű hardware
+- Nincs címzés
+
+---
+
+## Hátrányok
+- Sok vezeték
+- Nincs ACK
+- Nincs arbitration
+- Nincs clock stretching
+- Nincs hot-plug
+
+---
+
+## SPI vs I2C
+- SPI gyorsabb
+- I2C kevesebb vezeték
+
+---
+
+## Felhasználás
+- szenzorok
+- memória (EEPROM, Flash)
+- SD kártya
+- LCD
+- DAC, ADC
+- RFID
+
+---
+
+## SD kártya SPI
+- 3-4 vezeték
+- MISO, MOSI, SCK, CS
+- Több mód: SD vagy SPI
+
+---
+
+## Példa eszközök
+- MAX7219 LED driver
+- Bluetooth modul
+- RC522 RFID
+
+---
+
+## Regiszterek
+
+### Control
+- SPIE (interrupt)
+- SPE (enable)
+- MSTR (master mód)
+- CPOL, CPHA
+- DORD (bit sorrend)
+
+---
+
+### Status
+- SPIF (kész flag)
+- WCOL (ütközés)
+
+---
+
+## Master működés
+- adat írás a regiszterbe
+- vár SPIF flag-re
+
+---
+
+## Slave működés
+- vár adat érkezésre
+- kiolvassa regisztert
+
+---
+
+## Bufferelés
+- transmit: single buffer
+- receive: double buffer
+
+---
+
+## Fontos
+- adatot időben ki kell olvasni
+- különben elveszik
+
+---
+
+## SPI jellemző
+- flexibilis protokoll
+- a fejlesztő határozza meg a formátumot

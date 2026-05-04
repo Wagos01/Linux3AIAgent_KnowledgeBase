@@ -1,0 +1,88 @@
+# Topic: Ultrahangos távolságmérés
+
+## Ultrahang
+- >20 kHz frekvencia
+- hanghullám
+
+---
+
+## Működés
+- jel kibocsátása
+- visszaverődés mérése
+- idő alapján távolság számítás
+
+---
+
+## Szenzor működés
+1. Trigger (10 μs jel)
+2. Echo várása
+3. Echo hossza = idő
+
+---
+
+## Echo jel
+- HIGH ideje = utazási idő
+
+---
+
+## Távolság számítás
+- levegőben: 340 m/s
+- távolság = (idő * sebesség) / 2
+
+---
+
+## Példák
+- 150 μs → ~2.55 cm
+- 25 ms → ~4.25 m
+
+---
+
+## Maximum tartomány
+- kb. 6.5 m
+
+---
+
+## Vízben
+- hangsebesség: 1482 m/s
+
+---
+
+## Alkalmazások
+- parkoló szenzor
+- robotika
+- sonar
+
+---
+
+## Radar vs ultrahang
+- radar nem működik vízben jól
+- ultrahang igen
+
+---
+
+## Idő mérési módszerek
+
+### Polling
+- while ciklusban figyelés
+
+---
+
+### Külső interrupt
+- pin változásra reagál
+
+---
+
+### Event capture
+- automatikusan menti TCNT értéket
+
+---
+
+## Event capture
+- ICR regiszterbe ment
+- interruptot generál
+
+---
+
+## Használat
+- pontos időmérés
+- több impulzus kezelése

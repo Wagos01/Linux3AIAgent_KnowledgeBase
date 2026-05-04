@@ -1,0 +1,69 @@
+# Topic: One Wire (1W)
+
+## Alapok
+- 1 adatvezeték + GND
+- Aszinkron kommunikáció
+- Dallas Semiconductor fejlesztette
+
+---
+
+## Előnyök
+- Kevés vezeték
+- Olcsó
+- Egyszerű bekötés
+
+---
+
+## Hátrányok
+- Lassú (~15.2 kbps)
+- Nincs órajel
+- Címzés szükséges több eszköz esetén
+
+---
+
+## Master-Slave modell
+- 1 Master
+- több Slave
+
+---
+
+## UID
+- 64 bites egyedi azonosító
+- Minden eszköznek saját ID-ja van
+
+---
+
+## Példa eszköz
+- DS18B20 hőmérő
+  - -55°C – +125°C
+  - ±0.5°C pontosság
+
+---
+
+## Parazita táplálás
+- Az adatvonalon keresztül kap tápot
+- Kondenzátor tárolja az energiát
+
+---
+
+## Kommunikáció lépései
+1. RESET
+2. CÍMZÉS
+3. PARANCS
+
+---
+
+## Jel állapotok
+- IDLE = HIGH
+- RESET = hosszú LOW (≥480 μs)
+
+---
+
+## Presence pulse
+- Slave válasza RESET után
+
+---
+
+## Fontos
+- Több eszköz esetén címzés kötelező
+- Parazita módnál extra áram kell (strong pull-up)

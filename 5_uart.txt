@@ -1,0 +1,80 @@
+# Topic: UART / Soros kommunikáció
+
+## Soros port
+- Az információ sorban, bitenként halad
+- Egyszerre 1 bit kerül átvitelre
+- Egyszerű hardware, ezért elterjedt embedded rendszerekben
+
+## Sebesség
+- 115200 baud ≈ 90 kbps
+- USB 2: 480 Mbps
+- USB 3: 5 Gbps
+
+---
+
+## RS232 protokoll
+- Feszültség: -15V és +15V
+- Nem kompatibilis közvetlenül mikrokontrollerrel (0–5V)
+- Átalakító szükséges (pl. MAX232)
+
+## UART
+- 0V – 5V tartományban működik
+- Mikrokontrollerek ezt használják
+
+---
+
+## Alap fogalmak
+- TX (Transmit)
+- RX (Receive)
+- GND (közös föld)
+
+---
+
+## Adatküldés
+- 1 START bit
+- 8 adatbit
+- 1 STOP bit
+
+---
+
+## Handshake
+
+### Hardware handshake
+- RTS/CTS
+- DSR/DTR
+- Külön vezetéken történik
+
+Előny:
+- nem foglal adatcsatornát
+
+Hátrány:
+- több vezeték kell
+
+---
+
+## TTL vs RS232
+- TTL: 0–5V
+- RS232: ±15V
+- Átalakító szükséges (MAX232)
+
+---
+
+## Egyéb protokollok
+- RS422
+- RS485
+
+---
+
+## Fizikai megvalósítás
+- Twisted pair kábel csökkenti a zajt
+
+---
+
+## USART
+- Synchronous + Asynchronous mód
+- Szinkron:
+  - van közös órajel
+  - gyorsabb
+- Aszinkron:
+  - nincs közös órajel
+  - egyszerűbb

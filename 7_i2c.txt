@@ -1,0 +1,97 @@
+# Topic: I2C (TWI)
+
+## Alapok
+- 2 vezeték:
+  - SCL (clock)
+  - SDA (data)
+- + GND
+- Philips fejlesztette
+
+---
+
+## Tulajdonságok
+- Szinkron protokoll
+- Master-Slave modell
+- Több eszköz egy buszon
+
+---
+
+## Sebesség
+- 100–400 kbps (normál)
+- akár 1–3 Mbps
+
+---
+
+## Busz működés
+- IDLE = HIGH
+- Clock jelet a Master adja
+
+---
+
+## Címzés
+- 7 bit cím + 1 bit (read/write)
+- max 127 eszköz
+
+---
+
+## Kommunikáció lépései
+1. START
+2. CÍMZÉS
+3. UTASÍTÁS (R/W)
+4. ADAT
+5. ACK
+6. STOP
+
+---
+
+## ACK (Acknowledge)
+- 1 bit visszajelzés
+- ha nincs → hiba (NACK)
+
+---
+
+## Adatátvitel
+- SDA stabil amikor SCL = HIGH
+- változás csak SCL = LOW esetén
+
+---
+
+## START / STOP
+- SDA változik amikor SCL = HIGH
+- csak Master generálhatja
+
+---
+
+## Módok
+
+### Master Transmit
+- Master küld
+- Slave fogad
+
+### Master Receive
+- Slave küld
+- Master fogad
+
+---
+
+## Clock stretching
+- Slave lassíthatja a kommunikációt
+- Clock LOW-ban tartásával
+
+---
+
+## Arbitration
+- Több Master esetén
+- eldöntik ki marad Master
+
+---
+
+## Adatcsomag
+- 8 bit adat
+- 1 bit ACK
+
+---
+
+## Repeated START
+- Master nem adja át az irányítást
+- több művelet egyben
